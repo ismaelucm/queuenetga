@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ArquetypeSet name="ArquetypeSimulationConfigExample">
+    <ArquetypeConfigList>
+        <ArquetypeConfig arquetypeName="Pedestrian">
+            <componentConfigList>
+                <ComponentConfig component="Pedestrian"/>
+            </componentConfigList>
+        </ArquetypeConfig>
+
+        <ArquetypeConfig arquetypeName="NodeTrafficControll">
+            <componentConfigList>
+                <ComponentConfig component="NodeTrafficControll"/>
+                <ComponentConfig component="Sensor" enable="false">
+                    <AttributeList>
+                        <Attribute name="timeBetweenMeasures" value="1"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </componentConfigList>
+        </ArquetypeConfig>
+
+
+        <ArquetypeConfig arquetypeName="SimulationFinishControll">
+            <componentConfigList>
+                <ComponentConfig component="SimulationFinishControll"/>
+            </componentConfigList>
+        </ArquetypeConfig>
+    </ArquetypeConfigList>
+</ArquetypeSet>

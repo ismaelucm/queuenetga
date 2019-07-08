@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.jme3x:jfx:2.184.2016-04-30_145140-ccbd413">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/jme3x/jfx/2.184.2016-04-30_145140-ccbd413/jfx-2.184.2016-04-30_145140-ccbd413.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/jme3x/jfx/2.184.2016-04-30_145140-ccbd413/jfx-2.184.2016-04-30_145140-ccbd413-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/jme3x/jfx/2.184.2016-04-30_145140-ccbd413/jfx-2.184.2016-04-30_145140-ccbd413-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

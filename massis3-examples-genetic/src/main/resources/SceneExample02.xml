@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene arquetypeConfig="ArquetypeSimulationConfigExample" sceneName="SeceneExample">
+    <SimulationConfig stepTime="1" numSteps="60" simulationTime="60"/>
+
+    <!-- WorldConfig => Configure the graph that represent the world-->
+    <WorldConfig directed="false">
+        <NodeConfigList>
+            <NodeConfig nodeName="MainGate" capacity="10000"/>
+
+            <NodeConfig nodeName="MainHall.Entrance" capacity="100"/>
+            <NodeConfig nodeName="MainHall.Library" capacity="100" />
+
+            <NodeConfig nodeName="LobbyEventRoom.Hall" capacity="35" />
+            <NodeConfig nodeName="LobbyEventRoom.EventRoom" capacity="35" />
+            <NodeConfig nodeName="LobbyEventRoom.Final" capacity="35" />
+
+            <NodeConfig nodeName="Library" capacity="390" />
+            <NodeConfig nodeName="EventRoom" capacity="429" />
+            <NodeConfig nodeName="LobbyCafeteria" capacity="50" />
+            <NodeConfig nodeName="Council" capacity="20" />
+            <NodeConfig nodeName="Council2" capacity="20" />
+            <NodeConfig nodeName="ElevatorsLobby" capacity="40" />
+
+            <NodeConfig nodeName="ClassesLobby.Class1" capacity="30" />
+            <NodeConfig nodeName="ClassesLobby.Class2" capacity="30" />
+            <NodeConfig nodeName="ClassesLobby.Class3" capacity="30" />
+            <NodeConfig nodeName="ClassesLobby.Class4" capacity="30" />
+            <NodeConfig nodeName="ClassesLobby.Class5" capacity="30" />
+
+            <NodeConfig nodeName="CafeteriaHall" capacity="30" />
+            <NodeConfig nodeName="ProfessorsCafeteria" capacity="120" />
+            <NodeConfig nodeName="StudentsCafeteria" capacity="400" />
+            <NodeConfig nodeName="HallBackGate.Cafeteria" capacity="50" />
+            <NodeConfig nodeName="HallBackGate.Lobby" capacity="50" />
+
+            <NodeConfig nodeName="BackGate" capacity="10000" />
+
+            <NodeConfig nodeName="Class1" capacity="200" />
+            <NodeConfig nodeName="Class2" capacity="200" />
+            <NodeConfig nodeName="Class3" capacity="200" />
+            <NodeConfig nodeName="Class4" capacity="200" />
+            <NodeConfig nodeName="Class5" capacity="200" />
+        </NodeConfigList>
+
+        <VerticeConfigList>
+
+            <VerticeConfig source="MainGate" destination="MainHall.Entrance" transportRate="4" timeToCrossTheEdge="2"/>
+
+            <VerticeConfig source="MainHall.Entrance" destination="LobbyCafeteria" transportRate="4" timeToCrossTheEdge="6"/>
+            <VerticeConfig source="MainHall.Entrance" destination="MainHall.Library" transportRate="8" timeToCrossTheEdge="6"/>
+            <VerticeConfig source="MainHall.Library" destination="LobbyEventRoom.Hall" transportRate="8" timeToCrossTheEdge="7"/>
+
+            <VerticeConfig source="LobbyEventRoom.Hall" destination="ClassesLobby.Class1" transportRate="5" timeToCrossTheEdge="7"/>
+            <VerticeConfig source="LobbyEventRoom.Hall" destination="LobbyEventRoom.EventRoom" transportRate="5" timeToCrossTheEdge="7"/>
+            <VerticeConfig source="LobbyEventRoom.EventRoom" destination="Library" transportRate="2" timeToCrossTheEdge="7"/>
+            <VerticeConfig source="LobbyEventRoom.EventRoom" destination="EventRoom" transportRate="2" timeToCrossTheEdge="7"/>
+            <VerticeConfig source="LobbyEventRoom.EventRoom" destination="LobbyEventRoom.Final" transportRate="5" timeToCrossTheEdge="7"/>
+
+
+            <VerticeConfig source="LobbyCafeteria" destination="Council" transportRate="2" timeToCrossTheEdge="6"/>
+            <VerticeConfig source="LobbyCafeteria" destination="Council2" transportRate="2" timeToCrossTheEdge="6"/>
+            <VerticeConfig source="LobbyCafeteria" destination="CafeteriaHall" transportRate="5" timeToCrossTheEdge="6"/>
+            <VerticeConfig source="CafeteriaHall" destination="StudentsCafeteria" transportRate="5" timeToCrossTheEdge="6"/>
+            <VerticeConfig source="LobbyCafeteria" destination="ElevatorsLobby" transportRate="3" timeToCrossTheEdge="6"/>
+
+            <VerticeConfig source="ElevatorsLobby" destination="ClassesLobby.Class1" transportRate="3" timeToCrossTheEdge="8"/>
+            <!--<VerticeConfig source="ElevatorsLobby" destination="ClassesLobby.Class2" transportRate="2"/>-->
+
+            <VerticeConfig source="ClassesLobby.Class1" destination="Class1" transportRate="2" timeToCrossTheEdge="8"/>
+            <VerticeConfig source="ClassesLobby.Class2" destination="Class2" transportRate="1" timeToCrossTheEdge="8"/>
+            <VerticeConfig source="ClassesLobby.Class3" destination="Class3" transportRate="1" timeToCrossTheEdge="8"/>
+            <VerticeConfig source="ClassesLobby.Class4" destination="Class4" transportRate="1" timeToCrossTheEdge="8"/>
+            <VerticeConfig source="ClassesLobby.Class5" destination="Class5" transportRate="1" timeToCrossTheEdge="8"/>
+
+            <VerticeConfig source="ClassesLobby.Class1" destination="ClassesLobby.Class2" transportRate="4" timeToCrossTheEdge="8"/>
+            <VerticeConfig source="ClassesLobby.Class2" destination="ClassesLobby.Class3" transportRate="4" timeToCrossTheEdge="8"/>
+            <VerticeConfig source="ClassesLobby.Class3" destination="ClassesLobby.Class4" transportRate="4" timeToCrossTheEdge="8"/>
+            <VerticeConfig source="ClassesLobby.Class4" destination="ClassesLobby.Class5" transportRate="4" timeToCrossTheEdge="8"/>
+
+            <VerticeConfig source="ClassesLobby.Class5" destination="HallBackGate.Lobby" transportRate="3" timeToCrossTheEdge="8"/>
+            <VerticeConfig source="HallBackGate.Lobby" destination="HallBackGate.Cafeteria" transportRate="6" timeToCrossTheEdge="3"/>
+            <VerticeConfig source="HallBackGate.Lobby" destination="BackGate" transportRate="2" timeToCrossTheEdge="3"/>
+            <VerticeConfig source="HallBackGate.Cafeteria" destination="StudentsCafeteria" transportRate="2" timeToCrossTheEdge="3"/>
+
+
+            <VerticeConfig source="LobbyCafeteria" destination="ProfessorsCafeteria" transportRate="2" timeToCrossTheEdge="3"/>
+            <VerticeConfig source="LobbyCafeteria" destination="StudentsCafeteria" transportRate="2" timeToCrossTheEdge="3"/>
+
+
+        </VerticeConfigList>
+    </WorldConfig>
+
+    <!-- InstanciationConfigList => Commands-->
+
+    <InstanciationConfigList>
+
+
+        <InstanciationConfig name="NodeTrafficControll01" numElements="1" arquetype="NodeTrafficControll" place="MainGate">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="MainGate"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+        <InstanciationConfig name="NodeTrafficControll02" numElements="1" arquetype="NodeTrafficControll" place="MainHall.Entrance">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="MainHall.Entrance"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+        <InstanciationConfig name="NodeTrafficControll03" numElements="1" arquetype="NodeTrafficControll" place="MainHall.Library">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="MainHall.Library"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll04" numElements="1" arquetype="NodeTrafficControll" place="CafeteriaHall">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="CafeteriaHall"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll05" numElements="1" arquetype="NodeTrafficControll" place="LobbyEventRoom.Hall">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="LobbyEventRoom.Hall"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll06" numElements="1" arquetype="NodeTrafficControll" place="LobbyEventRoom.EventRoom">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="LobbyEventRoom.EventRoom"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll07" numElements="1" arquetype="NodeTrafficControll" place="LobbyEventRoom.Final">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="LobbyEventRoom.Final"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll08" numElements="1" arquetype="NodeTrafficControll" place="Library">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="Library"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll09" numElements="1" arquetype="NodeTrafficControll" place="EventRoom">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="EventRoom"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll10" numElements="1" arquetype="NodeTrafficControll" place="LobbyCafeteria">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="LobbyCafeteria"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll11" numElements="1" arquetype="NodeTrafficControll" place="Council">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="Council"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll12" numElements="1" arquetype="NodeTrafficControll" place="Council2">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="Council2"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll13" numElements="1" arquetype="NodeTrafficControll" place="ElevatorsLobby">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="ElevatorsLobby"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll14" numElements="1" arquetype="NodeTrafficControll" place="ClassesLobby.Class1">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="ClassesLobby.Class1"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll15" numElements="1" arquetype="NodeTrafficControll" place="ClassesLobby.Class2">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="ClassesLobby.Class2"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll16"  numElements="1" arquetype="NodeTrafficControll" place="ClassesLobby.Class3">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="ClassesLobby.Class3"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll17" numElements="1" arquetype="NodeTrafficControll" place="ClassesLobby.Class4">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="ClassesLobby.Class4"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll18" numElements="1" arquetype="NodeTrafficControll" place="ClassesLobby.Class5">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="ClassesLobby.Class5"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll19" numElements="1" arquetype="NodeTrafficControll" place="LobbyCafeteria">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="LobbyCafeteria"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll20" numElements="1" arquetype="NodeTrafficControll" place="ProfessorsCafeteria">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="ProfessorsCafeteria"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll21" numElements="1" arquetype="NodeTrafficControll" place="StudentsCafeteria">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="StudentsCafeteria"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll22" numElements="1" arquetype="NodeTrafficControll" place="HallBackGate.Cafeteria">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="HallBackGate.Cafeteria"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll23" numElements="1" arquetype="NodeTrafficControll" place="HallBackGate.Lobby">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="HallBackGate.Lobby"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll24" numElements="1" arquetype="NodeTrafficControll" place="BackGate">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="BackGate"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll25" numElements="1" arquetype="NodeTrafficControll" place="Class1">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="Class1"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll26" numElements="1" arquetype="NodeTrafficControll" place="Class2">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="Class2"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll27" numElements="1" arquetype="NodeTrafficControll" place="Class3">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="Class3"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll28" numElements="1" arquetype="NodeTrafficControll" place="Class4">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="Class4"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="NodeTrafficControll29" numElements="1" arquetype="NodeTrafficControll" place="Class5">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Sensor" enable="true">
+                    <AttributeList>
+                        <Attribute name="sensorName" value="Class5"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+
+        <!-- Go to the classrooms -->
+
+
+        <InstanciationConfig name="Pedestrian.MainGate.Class1" numElements="30" arquetype="Pedestrian" place="Class1">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Pedestrian">
+                    <AttributeList>
+                        <Attribute name="path"
+                                   value="Class1,ClassesLobby.Class1,ElevatorsLobby,LobbyCafeteria,MainHall.Entrance,MainGate"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="Pedestrian.MainGate.Class2" numElements="30" arquetype="Pedestrian" place="Class2">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Pedestrian">
+                    <AttributeList>
+                        <Attribute name="path"
+                                   value="Class2,ClassesLobby.Class2,ClassesLobby.Class1,LobbyEventRoom.Hall,MainHall.Library,MainHall.Entrance,MainGate"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="Pedestrian.MainGate.Class3" numElements="30" arquetype="Pedestrian" place="Class3">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Pedestrian">
+                    <AttributeList>
+                        <Attribute name="path"
+                                   value="Class3,ClassesLobby.Class3,ClassesLobby.Class2,ClassesLobby.Class1,ElevatorsLobby,LobbyCafeteria,MainHall.Entrance,MainGate"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="Pedestrian.BackGate.Class4" numElements="30" arquetype="Pedestrian" place="Class4">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Pedestrian">
+                    <AttributeList>
+                        <Attribute name="path"
+                                   value="Class4,ClassesLobby.Class4,ClassesLobby.Class5,HallBackGate.Lobby,BackGate"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="Pedestrian.BackGate.Class5" numElements="30" arquetype="Pedestrian" place="Class5">
+            <ComponentConfigOverrideList>
+                <ComponentConfig component="Pedestrian">
+                    <AttributeList>
+                        <Attribute name="path"
+                                   value="Class5,ClassesLobby.Class5,HallBackGate.Lobby,BackGate"/>
+                    </AttributeList>
+                </ComponentConfig>
+            </ComponentConfigOverrideList>
+        </InstanciationConfig>
+
+        <InstanciationConfig name="SimulationFinishControll" numElements="1" arquetype="SimulationFinishControll"/>
+
+
+    </InstanciationConfigList>
+</Scene>

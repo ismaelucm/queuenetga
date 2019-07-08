@@ -1,0 +1,47 @@
+Behavior={
+    Name="RunAway",
+    Type="FSM",
+    Blackboard={
+        Inputs={
+            PlaceList="",
+            Place="";
+        },
+        Outputs={
+            Target=""
+        }
+    },
+    States={
+        State0={
+            Action="RandomPlaceAmongList",
+            Initial=true,
+            Parameters={
+                Inputs={
+                    PlaceList="Blackboard.PlaceList",
+                },
+                Outputs={
+                    PlaceSelected="Blackboard.Place"
+                }
+            }
+        },
+        State1={
+            Action="MoveTo",
+            Final=true,
+            Parameters={
+                Inputs={
+                    Speed=5,
+                    Target="Blackboard.Place",
+                    Animation="walk1"
+                }
+            }
+
+        }
+    },
+    Transitions={
+        {
+         From="State0",
+         When="ActionFinish",
+         To="State1"
+        }
+    }
+
+}

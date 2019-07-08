@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.massisframework.sunflow:sunflow:0.07.3i">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/massisframework/sunflow/sunflow/0.07.3i/sunflow-0.07.3i.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/massisframework/sunflow/sunflow/0.07.3i/sunflow-0.07.3i-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/massisframework/sunflow/sunflow/0.07.3i/sunflow-0.07.3i-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

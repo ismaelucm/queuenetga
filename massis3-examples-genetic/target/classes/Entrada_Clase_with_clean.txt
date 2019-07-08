@@ -1,0 +1,83 @@
+Simulation time 60.048798
+null:1.9669524
+MainHall.Library:2.3404365
+Class4:2.708514
+LobbyEventRoom.Hall:3.6052756
+Class1:1.3961
+Class2:1.0113603
+Class3:1.9119952
+ClassesLobby.Class4:2.930915
+ClassesLobby.Class3:1.3332043
+ClassesLobby.Class2:1.8780372
+Council2:1.5222504
+ClassesLobby.Class1:2.5134149
+ElevatorsLobby:0.39861917
+.
+EventRoom:4
+MainHall.Library:1000
+LobbyCafeteria:6
+Class4:637
+Class5:785
+MainHall.Entrance:786
+LobbyEventRoom.Hall:623
+BackGate:245
+Class1:537
+Council:6
+Class2:269
+Class3:270
+ClassesLobby.Class5:464
+ClassesLobby.Class4:146
+ClassesLobby.Class3:58
+ClassesLobby.Class2:166
+MainGate:534
+Council2:171
+HallBackGate.Lobby:517
+Library:23
+ClassesLobby.Class1:579
+ElevatorsLobby:1
+HallBackGate.Cafeteria:225
+
+
+-----------------------
+
+
+Simulation time 60.030712
+null:10.573273
+EventRoom:2.9176245
+MainHall.Library:23.587664
+MainHall.Entrance:2.5568917
+LobbyEventRoom.Hall:21.213036
+BackGate:1.4653958
+Class2:2.101137
+Class3:2.8078616
+ClassesLobby.Class5:2.1439548
+ClassesLobby.Class3:1.7325413
+ClassesLobby.Class2:3.1463141
+HallBackGate.Lobby:37.840107
+Library:0.25437224
+HallBackGate.Cafeteria:4.023701
+.
+EventRoom:3
+LobbyCafeteria:6
+MainHall.Library:725 -
+Class4:594 -
+Class5:883 -
+MainHall.Entrance:657 -
+LobbyEventRoom.Hall:446 -
+BackGate:186 -
+CafeteriaHall:2
+Class1:609 -
+Council:50
+Class2:386 -
+Class3:315 -
+ClassesLobby.Class5:420 -
+ClassesLobby.Class4:299 -
+ClassesLobby.Class3:120 -
+ClassesLobby.Class2:359 -
+MainGate:831 -
+Council2:110
+HallBackGate.Lobby:473 -
+Library:8
+ClassesLobby.Class1:481 -
+HallBackGate.Cafeteria:223
+ProfessorsCafeteria:9
